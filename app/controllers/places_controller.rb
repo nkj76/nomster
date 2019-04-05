@@ -5,5 +5,8 @@ class PlacesController < ApplicationController
     @places = Place.all.page(params[:page]).per(6)
   end
 
+  def new
+    @place = Place.new
+  end
 
 end
