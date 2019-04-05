@@ -3,7 +3,9 @@
 <!-- <%= "here is some debug text #{@places.class}" %> 
 <br />
 <%= page_entries_info @places %> -->
-<%= paginate @places %>
+<div class="npaginator offset-1">
+  <%= paginate @places %>
+</div>
 
 <% @places.each do |place| %>
   <div class="booyah-box col-10 offset-1">
@@ -13,6 +15,8 @@
   </div>
 <% end %>
 
-<%= paginate @places %>
+<div class="npaginator offset-1">
+  <%= paginate @places %>
+</div>
 
 
