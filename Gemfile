@@ -76,3 +76,5 @@ end
 
 # Add kaminari
 gem 'kaminari'
+
+gem "font-awesome-rails"
