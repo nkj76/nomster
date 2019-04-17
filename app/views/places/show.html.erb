@@ -44,7 +44,28 @@
 
 
 
-<!-- Modal -->
+      <!-- show the photos before the comments -->
+      <!-- form to upload photos -->
+  <%= simple_form_for @photo, url: place_photos_path(@place)  do |f| %>      
+    <%= f.input :caption %>
+    <%= f.submit "Add a Photo", class: 'btn btn-primary' %>
+  <% end %>
+
+<br />
+<div class="col-10 offset-1">
+  <h1 class="float-left">Photos</h1>
+</div>
+<br />
+<!-- display the photos -->
+<% @place.photos.each do |photo| %>
+   <div class="col-12 col-sm-6">
+      <blockquote>
+          <%= photo.caption %>
+      </blockquote>
+    </div>
+<% end %>
+
+<!-- Modal for comments -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -55,6 +76,7 @@
         <h4 class="modal-title" id="myModalLabel">Add a comment</h4>
       </div>
 
+      <!-- form to submit comments -->
       <%= simple_form_for @comment, url: place_comments_path(@place) do |f| %>
         <div class="modal-body">
           <%= f.input :message %>

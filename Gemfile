@@ -83,3 +83,6 @@ gem "devise"
 gem "geocoder"
 
 gem "figaro"
+
+# for uploading photos/images
+gem 'carrierwave', '~> 1.0'
