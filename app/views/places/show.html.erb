@@ -48,6 +48,7 @@
       <!-- form to upload photos -->
   <%= simple_form_for @photo, url: place_photos_path(@place)  do |f| %>      
     <%= f.input :caption %>
+    <%= f.input :picture %>
     <%= f.submit "Add a Photo", class: 'btn btn-primary' %>
   <% end %>
 
@@ -61,6 +62,10 @@
    <div class="col-12 col-sm-6">
       <blockquote>
           <%= photo.caption %>
+ <!--          <%= photo.picture %>   -->
+          <% if ! photo.picture.file.nil?  %>
+              <%= image_tag photo.picture.url %>
+          <% end %>
       </blockquote>
     </div>
 <% end %>
