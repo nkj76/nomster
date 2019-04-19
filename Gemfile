@@ -84,5 +84,6 @@ gem "geocoder"
 
 gem "figaro"
 
+gem "fog-aws"
 # for uploading photos/images
 gem 'carrierwave', '~> 1.0'
