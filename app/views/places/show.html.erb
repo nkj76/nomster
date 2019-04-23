@@ -90,9 +90,10 @@
     <% if ! photo.picture.file.nil?  %>
       <div class="col-12 col-sm-4">
         <%= image_tag photo.picture.url %>
-        <blockquote>
+        <!-- <blockquote> -->
+          <br />
           <%= photo.caption %>
-        </blockquote>
+        <!-- </blockquote> -->
       </div>
     <% end %>
   <% end %>
@@ -146,7 +147,8 @@
         <% if comment.humanized_rating.present? %>
           <b><%= comment.humanized_rating %>: </b>
         <% end %>
-          <%= comment.message %>
+        <%= comment.message %>
+        <br />
         <small><%= comment.user.email %></small>
       </blockquote>
     </div>

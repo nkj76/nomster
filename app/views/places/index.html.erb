@@ -24,7 +24,7 @@
               <div>
                 <blockquote>
                   <% if place.comments.last.humanized_rating.present? %>
-                    <b><%= place.comments.last.humanized_rating %></b>
+                    <b><%= place.comments.last.humanized_rating %>: </b>
                   <% end %>
                   <%= place.comments.last.message %>
                   <br />
@@ -45,6 +45,7 @@
                 <!-- <div class="col-12 col-sm-4"> -->
                 <!-- <div class="col-sm-6"> -->
                 <div>
+                  <br />
                   <%= image_tag place.photos.first.picture.url %>
                   <!-- <blockquote> -->
                     <br />
