@@ -79,7 +79,7 @@
 
 <!-- display the photos -->
 <div class="col-10 offset-1">
-  <h1 class="float-left">Photos</h1>
+  <h1 class="float-left photoscomments">Photos</h1>
 </div>
 
 <div class="clear"></div>
@@ -88,11 +88,13 @@
 <div class="row">
   <% @place.photos.each do |photo| %>
     <% if ! photo.picture.file.nil?  %>
-      <div class="col-12 col-sm-4">
-        <%= image_tag photo.picture.url %>
+      <div class="col-12 col-sm-4 text-center">
+        <!-- <%= image_tag photo.picture.url %> -->
+        <%= image_tag photo.picture.url, style: 'display: block; margin: auto; width: 80%; padding-top: 20px; ' %>
         <!-- <blockquote> -->
           <br />
-          <%= photo.caption %>
+          <%= photo.caption  %>
+          <!-- <br /> -->
         <!-- </blockquote> -->
       </div>
     <% end %>
@@ -131,7 +133,7 @@
 
 <hr>
 <div class="col-10 offset-1">
-  <h1 class="float-left">Comments</h1>
+  <h1 class="float-left photoscomments">Comments</h1>
   <!-- Button trigger modal -->
   <button type="button" class="btn btn-primary btn-lg float-right" data-toggle="modal" data-target="#myModal">
     Add a comment
